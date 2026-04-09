@@ -5,16 +5,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] edades = new int[5];
+        double[] notas = new double[8];
 
-        for (int i = 0; i < 5; i++) {
-            System.out.print("Ingrese edad: ");
-            edades[i] = sc.nextInt();
+        for (int i = 0; i < 8; i++) {
+            System.out.print("Ingrese nota: ");
+            notas[i] = sc.nextDouble();
         }
 
-        System.out.println("Edades registradas:");
-        for (int i = 0; i < 5; i++) {
-            System.out.println(edades[i]);
+        System.out.println("Notas:");
+        for (double nota : notas) {
+            System.out.println(nota);
         }
     }
 }
