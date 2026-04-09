@@ -5,16 +5,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double[] notas = new double[8];
+        int[] puntajes = new int[6];
+        int mayor = 0;
 
-        for (int i = 0; i < 8; i++) {
-            System.out.print("Ingrese nota: ");
-            notas[i] = sc.nextDouble();
+        for (int i = 0; i < 6; i++) {
+            System.out.print("Ingrese puntaje: ");
+            puntajes[i] = sc.nextInt();
+
+            if (puntajes[i] > mayor) {
+                mayor = puntajes[i];
+            }
         }
 
-        System.out.println("Notas:");
-        for (double nota : notas) {
-            System.out.println(nota);
+        System.out.println("Puntajes:");
+        for (int p : puntajes) {
+            System.out.println(p);
         }
+
+        System.out.println("Mayor puntaje: " + mayor);
+
     }
 }
