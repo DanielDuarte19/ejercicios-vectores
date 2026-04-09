@@ -5,28 +5,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] numeros = new int[8];
-        boolean encontrado = false;
+        int[] calificaciones = new int[12];
+        int[] conteo = new int[6]; // usamos índice 1 a 5
 
-        for (int i = 0; i < 8; i++) {
-            System.out.print("Ingrese número: ");
-            numeros[i] = sc.nextInt();
+        for (int i = 0; i < 12; i++) {
+            System.out.print("Ingrese calificación (1-5): ");
+            calificaciones[i] = sc.nextInt();
+            conteo[calificaciones[i]]++;
         }
 
-        System.out.print("Número a buscar: ");
-        int buscar = sc.nextInt();
-
-        for (int n : numeros) {
-            if (n == buscar) {
-                encontrado = true;
-                break;
-            }
-        }
-
-        if (encontrado) {
-            System.out.println("Sí está en el vector");
-        } else {
-            System.out.println("No está");
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Calificación " + i + ": " + conteo[i]);
         }
     }
 }
