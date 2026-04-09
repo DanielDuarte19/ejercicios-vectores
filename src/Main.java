@@ -5,24 +5,28 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] puntajes = new int[6];
-        int mayor = 0;
+        int[] numeros = new int[8];
+        boolean encontrado = false;
 
-        for (int i = 0; i < 6; i++) {
-            System.out.print("Ingrese puntaje: ");
-            puntajes[i] = sc.nextInt();
+        for (int i = 0; i < 8; i++) {
+            System.out.print("Ingrese número: ");
+            numeros[i] = sc.nextInt();
+        }
 
-            if (puntajes[i] > mayor) {
-                mayor = puntajes[i];
+        System.out.print("Número a buscar: ");
+        int buscar = sc.nextInt();
+
+        for (int n : numeros) {
+            if (n == buscar) {
+                encontrado = true;
+                break;
             }
         }
 
-        System.out.println("Puntajes:");
-        for (int p : puntajes) {
-            System.out.println(p);
+        if (encontrado) {
+            System.out.println("Sí está en el vector");
+        } else {
+            System.out.println("No está");
         }
-
-        System.out.println("Mayor puntaje: " + mayor);
-
     }
 }
